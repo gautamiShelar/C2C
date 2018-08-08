@@ -1,251 +1,338 @@
-# c2c2017
-Course material and references for Campus To Corporate course, 2017.
+# Session 1
 
-<img src="https://github.com/havanagrawal/c2c2017/blob/master/RubberDucks.jpg" width="500" height="500"></a>
+## Table of Contents
+1. [Intro to Java](#intro)
+    1. [What is Java](#what-is-java)
+    2. [Flavors of Java](#flavors)
+    3. [Compilation of a Java file](#compilation)
+    4. [Naming Conventions](#conventions)
+    5. [Hello, World](#hello)
+    6. [Primitive Data Types](#primitives)
+2. [Some Real Coding](#some-real-coding)
+    1. [Conditionals](#conditionals)
+    2. [Conditionals practice](#conditionals-practice)
+    3. [Loops](#loops)
+    4. [Loop practice](#loop-practice)
+3. [Assignments](#assignments)
+    1. [HackerRank](#hackerrank)
+    2. [Miscellaneous](#miscellaneous)
 
-## Resources
+### <a name="intro"></a>Intro to Java
+#### <a name="what-is-java"></a> What is Java?
+1. A programming language
+2. Object oriented
+3. WORA (Write-Once-Read-Anywhere)
+4. Platform Independent
 
-1. [Space-Time Complexity Cheatsheet](http://bigocheatsheet.com/)
-2. [Interactive Data Structure and Algorithm Visualizations](https://visualgo.net/en)
-3. [A Comparative Visualization of Sorting Algorithms](https://www.toptal.com/developers/sorting-algorithms/)
-4. [Another Visualization of Various Algorithms](http://algo-visualizer.jasonpark.me)
-5. [CS50 - The Quintessential Harvard Course](https://www.youtube.com/user/cs50tv)
-6. [Google - Coding Interview Example](https://www.youtube.com/watch?v=XKu_SEDAykw)
-7. [Google - Preparing for a Technical Interview](https://www.youtube.com/watch?v=ko-KkSmp-Lk)
+#### <a name="flavors"></a>Flavors of Java
+1. ME - Mobile Edition,
+2. SE - Standard Edition
+3. EE - Enterprise Edition
 
-## Other Interesting GitHub Repos
+#### <a name="compilation"></a>Compilation of a java file
+JDK, JRE, JVM, bytecode
 
-1. https://github.com/sdmg15/Best-websites-a-programmer-should-visit (Especially the "Interview Preparation" and "General Coding advice" sections)
-2. https://github.com/kdn251/interviews
-3. https://github.com/alex/what-happens-when
-4. https://github.com/jwasham/coding-interview-university
+JDK = Java Development Kit, provides you with libraries and binaries to develop Java programs  
+JRE = Java Runtime Environment, provides you with libraries to run Java programs  
+JVM = Java Virtual Machine, responsible for actually running compiled Java code (bytecode).  
+The JVM is what makes Java platform independent.  
+The JVM itself is not platform independent.  
 
-## Some Geeky Fun
+When compiling, remember that `javac` requires the **filename** as a parameter.  
+When running, remember that `java` requires the **name of the main class** as a parameter
 
-1. [Ineffective Sorts](https://xkcd.com/1185/)
-2. [Some More Sorts](https://threepanel.com/t/cube-drone/18/159)
-3. [Floating Point Woes](http://www.smbc-comics.com/?id=2999)
-4. [Trees and Heaps](https://xkcd.com/835/)
-5. [Little Bobby Tables](https://xkcd.com/327/)
-6. [Python Rocks](https://xkcd.com/353/)
-7. [Don't Use Gotos](https://xkcd.com/292/)
-8. [Real Life Applications of Subset Sum](https://xkcd.com/287/)
-9. [Peer Reviews](https://xkcd.com/1513/)
-10. [Parent-Child Bonding](https://xkcd.com/1188/)
+To avoid confusion, (and by convention), you should name both the file and the class it contains with the same name, **but this is not strictly compulsory, unless your class is public**. So `HelloWorld.java` would have a class called `HelloWorld`, which would have to have a method called `main` with the correct signature (See [Hello World](#hello) example below.)
 
-## Motivation
 
-1. [What Most Schools Don't Teach](https://www.youtube.com/watch?v=nKIu9yen5nc)
-2. [Code - The New Literacy](https://www.youtube.com/watch?v=MwLXrN0Yguk)
 
-## Index
+```
+javac HelloWorld.java
+java Hello
+```
 
-<details>
-<summary>Session 1</summary>
-    
-1. [Session 1](Session01)
-    1. [Intro to Java](Session01#intro)
-        1. [What is Java](Session01#what-is-java)
-        2. [Flavors of Java](Session01#flavors)
-        3. [Compilation of a Java file](Session01#compilation)
-        4. [Naming Conventions](Session01#conventions)
-        5. [Hello, World](Session01#hello)
-        6. [Primitive Data Types](Session01#primitives)
-    2. [Some Real Coding](Session01#some-real-coding)
-        1. [Conditionals](Session01#conditionals)
-        2. [Conditionals practice](Session01#conditionals-practice)
-        3. [Loops](Session01#loops)
-        4. [Loop practice](Session01#loop-practice)
-    3. [Assignments](Session01#assignments)
-        1. [HackerRank](Session01#hackerrank)
-        2. [Miscellaneous](Session01#miscellaneous)
-</details>
+#### <a name="conventions"></a>Naming Conventions
+Variables and functions: `camelCase`  
+Examples: `noOfCats`, `scanner`, `totalSalary`, `getAmount`
 
-<details>
-<summary>Session 2</summary>
-    
-1. [Session 2](Session02)
-    1. [Revision](Session02#revision)
-    2. [Arrays](Session02#arrays)
-        1. [Declaration, Intialization and Use](Session02#array-intro)
-        2. [Iteration](Session02#array-iteration)
-        3. [Array Practice](Session02#array-practice)
-    2. [Functions](Session02#functions)
-        1. [Basic Syntax](Session02#function-syntax)
-        2. [Recursion](Session02#function-recursion)
-    3. [Memoization](Session02#memoization)
-    4. [VarArgs](Session02#varargs)
-    5. [2D Arrays](Session02#2d-arrays)
-    6. [Assignments](Session02#assignments)
-    	1. [HackerRank](Session02#hackerrank)
-    	2. [Miscellaneous](Session02#miscellaneous)
-    7. [Test](Session02#test)
-    
-</details>
+Classes: `PascalCase`  
+Examples: `SampleJavaApplication`, `CodeChefSolution`
 
-<details>
-<summary>Session 3</summary>
+Constants: `ALL_CAPS_WITH_UNDERSCORES`  
+Examples: `PI`, `SECONDS_IN_HOUR`
 
-1. [Session 3](Session03)
-    1. [Function Overloading](Session03#function-overload)
-    2. [Classes](Session03#classes)
-        1. [Constructors](Session03#class-constructor)
-        2. [Instance Variables](Session03#class-instance-var)
-        3. [Instance Methods](Session03#class-instance-method)
-    	4. [Static Methods and Instances](Session03#class-static)
-    	5. [Practice](Session03#class-practice)
-    	6. [The final modifier](Session03#class-final)
-    2. [The String class](Session03#string)
-    3. [Assignments](Session03#assignments)
-        1. [HackerRank](Session03#hackerrank)
-        2. [Miscellaneous](Session03#miscellaneous)
-    4. [Test](Session03#test)
-    
-</details>
+#### <a name="hello"></a>Hello World
 
-<details>
-<summary>Session 4</summary>    
-    
-1. [Session 4](Session04)
-    1. [Revision](Session04#session3-revise)
-    2. [Initializer Blocks](Session04#initializer)
-        1. [Instance Initializer Block](Session04#instance-initializer)
-        2. [Static Initializer Block](Session04#static-initializer)
-    3. [Call Stack](Session04#call-stack)
-    4. [Object Heap](Session04#object-heap)
-    5. [Some Traps and Pitfalls](Session04#traps)
-    6. [Recursion And Memoization Practice](Session04#recursion)
-    7. [BufferedReader - The Faster Way Of Accepting Input](Session04#buffered-reader)
-    8. [Sorting - A High Level Perspective](Session04#sorting)
-    9. [Assignments](Session04#assignments)
-        1. [HackerRank](Session04#hackerrank)
-        2. [Miscellaneous](Session04#miscellaneous)
-    10. [Test](Session04#test)
-    
-</details>
+```java
+class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello, world!");
+    }
+}
+```
 
-<details>
-<summary>Session 5</summary>    
-    
-1. [Session 5](Session05)
-    1. [Call By Value / Call By Copy Of Reference](Session05#parameter-passing)
-    2. [The `this` keyword](Session05#this-keyword)
-    3. [Inheritance](Session05#inheritance)
-        1. [Inheritance Models](Session05#inheritance-models)
-        2. [Access Modifiers](Session05#access-modifiers)
-    	3. [The `extends` keyword](Session05#extends-keyword)
-    	4. [The Point Example](Session05#point-example)
-    4. [Overriding](Session05#overriding)
-    5. [Abstract Data Structures - an Overview](Session05#ads)
-    6. [Assignments](Session05#assignments)
-        1. [HackerRank](Session05#hackerrank)
-        2. [Miscellaneous](Session05#miscellaneous)
-    7. [Test](Session05#test)
-    
-</details>
+`System`, `out`, and `println`  
+Signature of a function = name of the method + number and type of arguments (return type is not part of the signature in Java)  
+signature of `main` = `main` + a single argument which is an array of Strings.  
 
-<details>
-<summary>Session 6</summary>    
-    
-1. [Session 6](Session06)
-    1. [RapidFire Revision](Session06#rapid-revision)
-    2. [The `final` modifier (again)](Session06#final-modifier)
-    3. [The `this` keyword (again)](Session06#this-keyword)
-    4. [The `super` keyword (again)](Session06#super-keyword)
-    5. [Abstract Classes](Session06#abstract-classes)
-    6. [Interfaces](Session06#interfaces)
-    7. [Dynamic Method Dispatch](Session06#dynamic-method-dispatch)
-    8. [Order of Instance Variable Initialization](Session06#instance-initialization-order)
-    6. [Assignments](Session06#assignments)
-        1. [HackerRank](Session06#hackerrank)
-        2. [Miscellaneous](Session06#miscellaneous)
-        
-</details>
+If you do not define main correctly, but are close enough, these are the messages you would see **on runtime**:   
+```
+# Changed the return type
+Error: Main method must return a value of type void in class HelloWorld, please
+define the main method as:
+   public static void main(String[] args)
 
-<details>
-<summary>Session 7</summary>        
-        
-1. [Session 7](Session07)
-    1. [Linked Lists](Session07#linked-list)
-    2. [Sorting](Session07#sorting)
-    3. [Assignments](Session07#assignments)
-        1. [HackerRank](Session07#hackerrank)
-        2. [Miscellaneous](Session07#miscellaneous)
-        
-</details>
+# Removed the static identifier
+Error: Main method is not static in class HelloWorld, please define the main method as:
+   public static void main(String[] args)
 
-<details>
-<summary>Session 8</summary>        
-        
-1. [Session 8](Session08)
-    1. [The Collections Framework - Part I](Session08#cfw)
-        1. [The Collection Hierarchy](Session08#hierarchy)
-        2. [Lists, Queues and Sets](Session08#list-queue-set)
-        3. [Problems](Session08#cfwproblems)
-    2. [Trees](Session08#trees)
-        1. [Binary Trees](Session08#binary-trees)
-        2. [Binary Search Trees](Session08#bst)
-    3. [Assignments](Session08#assignments)
-        1. [HackerRank](Session08#hackerrank)
-        2. [Miscellaneous](Session08#miscellaneous)
-        
-</details>
+# Removed the public identifier
+# Note how it says it couldn't "find" the method at all.
+Error: Main method not found in class HelloWorld, please define the main method as:
+   public static void main(String[] args)
+```
 
-<details>
-<summary>Session 9</summary>        
-        
-1. [Session 9](Session09)
-    1. [The Object Class, `equals` and `hashCode`](Session09#object)
-    2. [The Collections Framework - Part II](Session09#cfw)
-        1. [Maps!](Session09#maps)
-        2. [Problems](Session09#cfwproblems)
-    3. [Graphs](Session09#graphs)
-        1. [Applications](Session09#applications)
-        2. [Classification](Session09#classification)
-        3. [Representation](Session09#representation)
-        4. [Terminology](Session09#terminology)
-        5. [Traversals and Algorithms](Session09#traversals)
-        6. [Problems](Session09#problems)
-        7. [An Extensive List of Graph Topics](Session09#gfg-graphs)
-    4. [Assignments](Session09#assignments)
-        1. [HackerRank](Session09#hackerrank)
-        2. [Miscellaneous](Session09#miscellaneous)
-        
-</details>
+#### <a name="primitives"></a>Primitive data types
+Primitives in Java (`byte`, `short`, `int`, `long`, `float`, `double`, `boolean`, `char`) and their ranges
 
-<details>
-<summary>Session 10</summary>        
-        
-1. [Session 10](Session10)
-    1. [Exception Handling](Session10#exceptions)
-        1. [The Exception Hierarchy](Session10#hierarchy)
-        2. [Checked and Unchecked Exceptions](Session10#checked-unchecked)
-        3. [`throw` and `throws`](Session10#throw-throws)
-        4. [try-catch-finally](Session10#tcf)
-        5. [Variants of try-catch-finally](Session10#tcf-variants)
-        6. [Call Stack propagation](Session10#propagation)
-        7. [Some "Exceptional" Cases](Session10#tcf-cases)
-    2. [Garbage Collection](Session10#gc)
-        1. [The Garbage Collector](Session10#gc-core)
-        2. [The `finalize` method](Session10#finalize)
-    3. [Assignments](Session10#assignments)
-        1. [HackerRank](Session10#hackerrank)
-        2. [Miscellaneous](Session10#miscellaneous)
-        
-</details>
+| Primitive Data Type | Size (bytes)           | Size (bits) | Range                                                       | Range in powers of 2                  |
+|---------------------|------------------------|-------------|-------------------------------------------------------------|---------------------------------------|
+| byte                | 1 byte                 | 8           | -128 to 127                                                 | -2<sup>7</sup> to 2<sup>7</sup> - 1   |
+| short               | 2 bytes                | 16          | -32,768 to 32,767                                           | -2<sup>15</sup> to 2<sup>15</sup> - 1 |
+| int                 | 4 bytes                | 32          | -2,147,483,648 to 2,147,483, 647                            | -2<sup>31</sup> to 2<sup>31</sup> - 1 |
+| long                | 8 bytes                | 64          | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807     | -2<sup>63</sup> to 2<sup>63</sup> - 1 |
+| float               | 4 bytes                | 32          | ~ ±3.40282347E+38F (6-7 significant decimal digits)         | -                                     |
+| double              | 8 bytes                | 64          | ~ ±1.79769313486231570E+308 (15 significant decimal digits) | -                                     |
+| char                | 2 byte                 | 16          | 0 to 65,536 (unsigned)                                      | 0 to 2<sup>16</sup> - 1               |
+| boolean             | not precisely defined* | -           | true or false                                               | -                                     |
 
-<details>
-<summary>Session 11</summary>        
-        
-1. [Session 11](Session11%20-%20StuffWeLeftOut)
-    1. [Data Structures and Algorithms](Session11%20-%20StuffWeLeftOut#dsa)
-        1. [Heaps](Session11%20-%20StuffWeLeftOut#heaps)
-        2. [Self Balancing Trees](Session11%20-%20StuffWeLeftOut#sbt)
-    2. [Java](Session11%20-%20StuffWeLeftOut#java)
-        1. [Enums](Session11%20-%20StuffWeLeftOut#enums)
-        1. [Packages](Session11%20-%20StuffWeLeftOut#packages)
-        1. [Immutable Classes](Session11%20-%20StuffWeLeftOut#immutable)
-        1. [Multi-Threading](Session11%20-%20StuffWeLeftOut#threading)
-        1. [Nested Classes](Session11%20-%20StuffWeLeftOut#nested-class)
+Arithmetic operations: `+`, `-`, `*`, `/`, `%`  
+Shorthand operations: `++`, `--`, `+=`, `-=`, `*=`, `/=`, `%=`  
+Comparative ops: `<`, `>`, `<=`, `>=`, `==`, `!=`  
+Logical ops: `&&`, `||`  
+Bitwise ops: `&`, `|`, `^`, `>>`, `<<`  
+Short-circuit behaviour  
+Ternary operator `condition ? value1 : value2`  
 
-</details>
+Basic modular arithmetic rules:
+These rules are particularly useful when the result of a calculation overflows.
+  1. `(a + b) % c == ((a % c) + (b % c)) % c`  
+  2. `(a * b) % c == ((a % c) * (b % c)) % c`  
+
+Note: The same does not apply for division. Modular division is a slightly more involved process, and you are not expected to know it.  
+
+Implicit and explicit casting  
+Casting from and to different data types  
+
+![Order of Implicit Casting](https://www3.ntu.edu.sg/home/ehchua/programming/java/images/JavaBasics_ImplicitTypeCastingPrimitives.png)
+
+Be careful with shorthand notation (`+=`, `-=`) because of implicit casting  
+Be careful with floating point precision  
+
+### <a name="some-real-coding"></a>Some real coding
+Input using `Scanner` class
+
+```java
+Scanner sc = new Scanner(System.in);
+```
+
+Practice:  
+
+1. Take n, print sum of first n numbers  
+2. Take k, print sum of first k odd numbers  
+3. Take k, print sum of first k even numbers
+
+#### <a name="conditionals"></a>Conditionals:
+
+##### if-else
+
+```java
+if (<boolean-expression>) {
+    // do stuff
+}
+```
+
+```java
+if (<boolean-expression>) {
+    // do stuff
+}
+else {
+    // do some other stuff
+}
+```
+
+```java
+if (<boolean-expression>) {
+    // do stuff
+}
+else {
+    if (<some-other-condition>) {
+        // do something
+    }
+    else {
+        // do something else
+    }
+}
+
+// Equivalent
+if (<boolean-expression>) {
+    // do stuff
+}
+else if (<some-other-condition>) {
+    // do something
+}
+else {
+    // do something else
+}
+```
+
+<a name="puzzles"></a>Some fun with if conditions.  
+Are these possible  
+`i > i + 1`  
+`i == i + 1`  
+`i != i + 0`  
+
+##### switch-case
+
+Typically useful when checking specific values on a variable
+
+```java
+int c = sc.nextInt();
+switch(c) {
+    case 2: System.out.println("Wow");
+            break;
+    case 0: int k = 5;
+            System.out.println("Look ma, no braces");
+            break;
+    case 4: System.out.println("I don't even need to be in order");
+            break;
+    default:
+            System.out.print("You're out of luck");
+            break;
+}
+```
+
+Remember that switch has fallthrough logic, so once a case matches, it will execute all following cases as well. E.g:
+
+```java
+int i = sc.nextInt() % 3;
+switch(i) {
+    case 0: System.out.println("I am divisible by 3");
+    case 1: System.out.println("I am not divisible by 3");
+    case 2: System.out.println("I am not at all divisible by 3");
+}
+```
+
+If you were to enter 3 (or any multiple of 3), it will print:
+> I am divisible by 3  
+> I am not divisible by 3  
+> I am not at all divisible by 3
+
+This is why you need to remember to put the `break;` statements in each case.
+
+You can skip the default case, but it is better to include it.
+
+
+##### <a name="conditionals-practice"></a>Practice:  
+1.	https://www.hackerrank.com/challenges/compare-the-triplets  
+
+#### <a name="loops"></a>Loops
+
+There are three styles of looping  
+1. for  
+2. while  
+3. do-while  
+
+
+##### for
+
+```java
+for (<initialization>;<condition>;<update>) {
+	// do stuff
+}
+```
+
+Any/all of the three components of a for loop can be left out. The following are valid for loops:
+
+```java
+// Infinite
+for(;;) {
+}
+
+int i = 0;
+for (;i < 5; i++){
+	System.out.println(i);
+}
+
+// Multiple declarations and updates are also okay!
+for (int i = 0, j = 10; i < j; i++,j--) {
+	System.out.println(i);
+}
+
+```
+
+##### while
+
+```java
+while (<condition>) {
+}
+```
+
+Example:
+```java
+while (i < 10) {
+    System.out.println(i);
+}
+```
+
+A common pattern in competitive programming is for the question to have multiple test cases in a single run. In such cases, a while loop is typically useful:
+```java
+// no of test cases
+int T = sc.nextInt();
+
+while (T-- != 0) {      // note the post-decrement
+    int n = sc.nextInt();
+    // ...
+}
+```
+
+##### do-while
+
+```java
+do {
+    // some stuff
+}
+while (<condition>);    // <- note the semicolon after the end
+```
+
+##### <a name="loop-practice"></a>Practice
+
+1.	https://www.hackerrank.com/challenges/simple-array-sum  
+2.	https://www.hackerrank.com/challenges/filling-jars  
+3.	https://www.hackerrank.com/challenges/mini-max-sum  
+
+### <a name="assignments"></a>Home Assignments
+
+#### <a name="hackerrank"></a>HackerRank
+1.	https://www.hackerrank.com/challenges/handshake  
+2.	https://www.hackerrank.com/challenges/summing-the-n-series  
+3.	https://www.hackerrank.com/challenges/staircase  
+4.	https://www.hackerrank.com/challenges/kangaroo  
+5.	https://www.hackerrank.com/challenges/utopian-tree  
+6.	https://www.hackerrank.com/challenges/strange-grid  
+7.	https://www.hackerrank.com/challenges/angry-professor  
+8.	https://www.hackerrank.com/challenges/rectangular-game  
+
+#### <a name="miscellaneous"></a>Miscellaneous
+1. Write a calculator program. Specifications:
+    1. Display a menu to the user. Menu should have the following options:
+        1. 1 = Addition, 2. Subtraction, 3 = Multiplication, 4 = Division, 5 = Exit
+	2. Accept an integer choice. If the choice is either 1, 2, 3 or 4, accept two **real numbers** from the user. (Hint: Search what real numbers are on Google, and decide on an appropriate data type for them.)
+	3. Perform the appropriate action on the two numbers.
+	4. Display the output.
+	5. If the user input an incorrect choice, inform him/her. Do **not** exit.
+	6. Continue steps 1 to 5, till the user chooses to exit.  
+
+	Some interesting cases:  
+	1. What do you expect will happen when you choose option 4, and the second operand is 0? What actually happens? What happens when you change the data type to plain integers?  
+	2. Does this help you answer an [earlier puzzle](#puzzles)?  
+	3. Pick option 2, enter the first operand as 2.1, and the second as 1.2. What output do you expect? What do you actually get? Why?   
